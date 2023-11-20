@@ -61,6 +61,8 @@ public class Counter {
        */
     }
 
+
+
     // method defined on object
     // package-default makes testing easier
     public long matchAndCalculate(Command cmd, String content) {
@@ -70,7 +72,9 @@ public class Counter {
             case Words -> content.lines()
                         .flatMap((String line) -> ptn.splitAsStream(line)) // split on Stream<String>
                         .filter((String word) -> !word.isEmpty()).count(); // keep non empty strings
-            case Characters -> Arrays.stream(content.split("")).map(String::trim).count();
+            case Characters -> Arrays.stream(content.split(""))
+                    .map(String::trim)
+                    .count();
 
         };
     }

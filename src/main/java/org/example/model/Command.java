@@ -14,7 +14,7 @@ public enum Command {
 
     // lambda syntax:
     // - the parameter list
-    // - the body of function
+    // - the body of functions
     // Function<InputType, OutputType>
     private static Function<String, Optional<Command>> logIncorrectInputAndGetEmpty = (String input) -> {
         System.out.printf("%s incorrect input", input);
@@ -33,7 +33,7 @@ public enum Command {
 
     public static Optional<Command> parseToCommand(String input) {
         return switch (input) {
-            case "-nika" -> Optional.of(Bytes);
+            case "-c" -> Optional.of(Bytes);
             case "-l" -> Optional.of(Lines);
             case "-w" -> Optional.of(Words);
             case "-m" -> Optional.of(Characters);
